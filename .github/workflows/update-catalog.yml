@@ -1,0 +1,46 @@
+name: Update Problem Catalog & Documentation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'solutions/**'
+      - 'templates/**'
+      - '.github/scripts/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-catalog:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate Problem Catalog & Documentation
+        run: |
+          python .github/scripts/update_catalog.py
+
+      - name: Commit & Push Changes
+        run: |
+          git config --global user.name "Akula Shashidhar"
+          git config --global user.email "mail2shashi11@gmail.com"
+          
+          if [ -n "$(git status --porcelain README.md docs/PROBLEMS.md)" ]; then
+            git add README.md docs/PROBLEMS.md
+            git commit -m "Auto-update problem catalog and documentation [skip ci]"
+            git push
+          else
+            echo "No documentation changes detected."
+          fi
