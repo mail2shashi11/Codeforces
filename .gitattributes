@@ -2,7 +2,6 @@
 
 *.cpp text eol=lf
 *.java text eol=lf
-*.html text eol=lf
 *.md text eol=lf
 *.gitignore text eol=lf
 *.editorconfig text eol=lf

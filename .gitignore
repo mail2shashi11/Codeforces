@@ -1,28 +1,38 @@
-# Compiled binaries and bytecode
+# Compiled binaries and object files
 *.exe
 *.out
 *.o
 *.obj
 *.class
 *.jar
+*.dSYM/
 
-# Build folders
+# Build and compilation outputs
 build/
+.build/
 bin/
 target/
+dist/
 
-# Local editor and OS files
+# IDE, Editor and OS configuration files
 .vscode/
 .idea/
+*.sublime-project
+*.sublime-workspace
 .DS_Store
 Thumbs.db
 
-# Contest scratch files
+# Competitive programming scratch & testing files
 input.txt
 output.txt
 *.in
+*.ans
 *.out.txt
-Cover
+test_input*
+test_output*
 
-# Logs
+# Temporary files & worktrees
+*.tmp
 *.log
+*.worktrees/
+Cover
