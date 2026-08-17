@@ -1,0 +1,28 @@
+# Compiled binaries and bytecode
+*.exe
+*.out
+*.o
+*.obj
+*.class
+*.jar
+
+# Build folders
+build/
+bin/
+target/
+
+# Local editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Contest scratch files
+input.txt
+output.txt
+*.in
+*.out.txt
+Cover
+
+# Logs
+*.log
